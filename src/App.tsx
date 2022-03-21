@@ -1,8 +1,19 @@
-import React from 'react';
+import { useState } from "react";
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [show, setShow] = useState(false);
+
+  if (show) {
+    return (
+      <div>
+        <p>thanh dat</p>
+        <button onClick={() => setShow(!show)}>Switch</button>
+      </div>
+    );
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -10,14 +21,7 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button onClick={() => setShow(!show)}>Switch</button>
       </header>
     </div>
   );
